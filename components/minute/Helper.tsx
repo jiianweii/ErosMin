@@ -1,13 +1,23 @@
+import { useNavbarContext } from "@/providers/NavbarProvider";
 import { MaterialIcons, SimpleLineIcons } from "@expo/vector-icons";
 import { useTheme } from "@react-navigation/native";
+import { useNavigation } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const Helper = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation();
+  const { setIsNavbarShown } = useNavbarContext();
+
+  function handleBackBtn() {
+    setIsNavbarShown(true);
+    navigation.navigate("index");
+  }
+
   return (
     <View style={styles.view}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleBackBtn}>
         <MaterialIcons
           name="keyboard-backspace"
           size={24}
