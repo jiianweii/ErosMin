@@ -1,5 +1,7 @@
 import Divider from "@/components/common/Divider";
 import Notification from "@/components/home/Notification";
+import PostCategories from "@/components/home/post/PostCategories";
+import PostList from "@/components/home/post/PostList";
 import StoryList from "@/components/home/stories/StoryList";
 import UserInfo from "@/components/home/UserInfo";
 import Colors from "@/util/colors";
@@ -21,8 +23,13 @@ export default function HomeScreen() {
       <View style={styles.storiesView}>
         <StoryList />
       </View>
+      <Divider thickness={0} />
       {/* Posts */}
-      <View style={styles.postView}></View>
+      <View style={styles.postView}>
+        <PostCategories />
+        <Divider thickness={0} />
+        <PostList />
+      </View>
     </SafeAreaView>
   );
 }
@@ -44,6 +51,7 @@ const styles = StyleSheet.create({
   },
   postView: {
     flex: 8,
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
+    paddingBottom: 20,
   },
 });
