@@ -1,6 +1,6 @@
 import { useNavbarContext } from "@/providers/NavbarProvider";
+import Colors from "@/util/colors";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { useTheme } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 const NavBar: React.FC<BottomTabBarProps> = ({
@@ -8,13 +8,13 @@ const NavBar: React.FC<BottomTabBarProps> = ({
   descriptors,
   navigation,
 }) => {
-  const { colors } = useTheme();
+  const colors = Colors();
   const { isNavbarShown, setIsNavbarShown } = useNavbarContext();
 
   if (!isNavbarShown) return null;
 
   return (
-    <View style={styles.view}>
+    <View style={[styles.view, { backgroundColor: colors.navbar }]}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const isFocused = state.index === index;
@@ -26,9 +26,7 @@ const NavBar: React.FC<BottomTabBarProps> = ({
             canPreventDefault: true,
           });
 
-          route.name == "minute"
-            ? setIsNavbarShown(false)
-            : setIsNavbarShown(true);
+          if (route.name !== "minute") setIsNavbarShown(true);
 
           if (!isFocused && !event.defaultPrevented) {
             navigation.navigate(route.name, route.params);
@@ -73,7 +71,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     bottom: 60,
     alignSelf: "center",
-    backgroundColor: "#fff",
     borderRadius: 30,
     paddingHorizontal: 5,
     paddingVertical: 7,
