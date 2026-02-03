@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   view: {
     position: "absolute",
     flexDirection: "row",
-    bottom: 60,
+    bottom: 30,
     alignSelf: "center",
     borderRadius: 30,
     paddingHorizontal: 5,
