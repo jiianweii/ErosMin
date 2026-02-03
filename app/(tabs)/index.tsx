@@ -1,30 +1,49 @@
-import { StyleSheet, Text } from "react-native";
+import Divider from "@/components/common/Divider";
+import Notification from "@/components/home/Notification";
+import StoryList from "@/components/home/stories/StoryList";
+import UserInfo from "@/components/home/UserInfo";
+import Colors from "@/util/colors";
+import { StyleSheet, View } from "react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
+  const colors = Colors();
   return (
-    <SafeAreaView>
-      <Text style={{ color: "#fff" }}>Test</Text>
+    <SafeAreaView style={[styles.view, { backgroundColor: colors.background }]}>
+      {/* User Info -> Notifications */}
+      <View style={styles.topNav}>
+        <UserInfo />
+        <Notification notifCount={3} />
+      </View>
+      <Divider />
+      {/* Stories (People you liked and liked you back) */}
+      <View style={styles.storiesView}>
+        <StoryList />
+      </View>
+      {/* Posts */}
+      <View style={styles.postView}></View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  view: {
+    flex: 1,
+  },
+  topNav: {
     flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
-    gap: 8,
+    flex: 0.5,
+    paddingHorizontal: 20,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  storiesView: {
+    flex: 1,
+    paddingHorizontal: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
+  postView: {
+    flex: 8,
+    paddingHorizontal: 20,
   },
 });
