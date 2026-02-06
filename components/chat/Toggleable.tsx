@@ -5,13 +5,22 @@ import ThemeText from "../common/ThemeText";
 
 type ToggleableProps = {
   title: string;
+  isSelected?: boolean;
 };
 
-const Toggleable = ({ title }: ToggleableProps) => {
+const Toggleable = ({ title, isSelected = false }: ToggleableProps) => {
   const colors = Colors();
+
+  const selectedStyle = isSelected && {
+    backgroundColor: colors.tabIconSelected,
+    borderColor: "none",
+  };
+
   return (
-    <TouchableOpacity style={[styles.btn, { borderColor: colors.text }]}>
-      <ThemeText>{title}</ThemeText>
+    <TouchableOpacity
+      style={[styles.btn, selectedStyle, { borderColor: colors.text }]}
+    >
+      <ThemeText style={isSelected ? { color: "#000" } : {}}>{title}</ThemeText>
     </TouchableOpacity>
   );
 };

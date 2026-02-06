@@ -5,8 +5,11 @@ import Toggleable from "./Toggleable";
 const Filter = () => {
   return (
     <View style={styles.view}>
-      <Toggleable title="All" />
+      <Toggleable title="All" isSelected={true} />
+      <Toggleable title="Archived" />
+      <Toggleable title="Today" />
       <Toggleable title="Unread" />
+      <Toggleable title="Muted" />
     </View>
   );
 };

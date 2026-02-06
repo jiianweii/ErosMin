@@ -1,6 +1,7 @@
 import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import Divider from "../common/Divider";
+import ThemeText from "../common/ThemeText";
 import ChatConversation from "./ChatConversation";
 
 const SAMPLE_DATA = [
@@ -57,6 +58,12 @@ const SAMPLE_DATA = [
 const ChatList = () => {
   return (
     <View style={styles.view}>
+      <View style={styles.titleView}>
+        <ThemeText style={styles.title}>
+          All Conversation ({SAMPLE_DATA.length})
+        </ThemeText>
+      </View>
+
       <FlatList
         data={SAMPLE_DATA}
         keyExtractor={(item) => item.name}
@@ -74,5 +81,12 @@ export default ChatList;
 const styles = StyleSheet.create({
   view: {
     flex: 1,
+    gap: 10,
+  },
+  titleView: {
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontWeight: 600,
   },
 });
