@@ -1,6 +1,6 @@
-import Colors from "@/util/colors";
 import { FontAwesome, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { StyleSheet, Text, View } from "react-native";
+import useColors from "@/util/colors";
 
 export type ActionProps = {
   id: number;
@@ -16,7 +16,7 @@ const ACTION_TYPES = {
 };
 
 const Action = ({ type, action }: ActionProps) => {
-  const colors = Colors();
+  const colors = useColors();
   return (
     <View style={styles.view}>
       {ACTION_TYPES[type]}

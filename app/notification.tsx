@@ -1,30 +1,29 @@
 import Divider from "@/components/common/Divider";
+import ThemeSafeView from "@/components/common/ThemeSafeView";
+import ThemeText from "@/components/common/ThemeText";
 import ActionList from "@/components/notification/ActionList";
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import { Entypo } from "@expo/vector-icons";
 import { router } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 const Notification = () => {
-  const colors = Colors();
+  const colors = useColors();
 
   return (
-    <SafeAreaView style={[styles.view, { backgroundColor: colors.background }]}>
+    <ThemeSafeView style={styles.view}>
       <View style={styles.header}>
         <TouchableOpacity onPress={router.back}>
           <Entypo name="chevron-left" size={24} color={colors.text} />
         </TouchableOpacity>
-        <Text style={[styles.heading, { color: colors.text }]}>
-          Notification
-        </Text>
+        <ThemeText style={styles.heading}>Notification</ThemeText>
         <Text></Text>
       </View>
       <Divider />
 
       <ActionList />
-    </SafeAreaView>
+    </ThemeSafeView>
   );
 };
 
@@ -41,7 +40,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   heading: {
-    fontSize: 23,
     fontWeight: 700,
     marginHorizontal: 25,
     marginVertical: 15,

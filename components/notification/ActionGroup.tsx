@@ -1,4 +1,4 @@
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import Divider from "../common/Divider";
@@ -10,7 +10,7 @@ export type ActionGroupProps = {
 };
 
 const ActionGroup = ({ date, actionList }: ActionGroupProps) => {
-  const colors = Colors();
+  const colors = useColors();
   return (
     <View>
       {/* Date -> Accordion */}
