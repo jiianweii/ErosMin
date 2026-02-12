@@ -1,18 +1,23 @@
 import { useNavbarContext } from "@/providers/NavbarProvider";
 import { MaterialIcons, SimpleLineIcons } from "@expo/vector-icons";
 import { useTheme } from "@react-navigation/native";
-import { useNavigation } from "expo-router";
+import { router } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Helper = () => {
+type HelperProps = {
+  handleStopMedia: () => void;
+};
+
+const Helper = ({ handleStopMedia }: HelperProps) => {
   const { colors } = useTheme();
-  const navigation = useNavigation();
+
   const { setIsNavbarShown } = useNavbarContext();
 
   function handleBackBtn() {
     setIsNavbarShown(true);
-    navigation.navigate("index");
+    handleStopMedia();
+    router.push("/(tabs)");
   }
 
   return (
@@ -25,10 +30,10 @@ const Helper = () => {
         />
       </TouchableOpacity>
       <View style={styles.toggleableView}>
-        <TouchableOpacity style={styles.toggleActive}>
-          <Text style={styles.text}>BEST MATCHES</Text>
+        <TouchableOpacity>
+          <Text style={[styles.text, styles.selected]}>BEST MATCHES</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.toggle}>
+        <TouchableOpacity>
           <Text style={styles.text}>NEAR YOU</Text>
         </TouchableOpacity>
       </View>
@@ -56,23 +61,18 @@ const styles = StyleSheet.create({
   toggleableView: {
     flexDirection: "row",
     padding: 2,
-    backgroundColor: "#000",
-    borderRadius: 9999,
-    overflow: "hidden",
-    gap: 10,
-  },
-  toggleActive: {
-    backgroundColor: "#2e2e2e",
-    borderRadius: 9999,
-    padding: 10,
-  },
-  toggle: {
-    borderRadius: 9999,
-    padding: 10,
+    gap: 20,
   },
   text: {
-    color: "#fff",
+    color: "#a3a3a3",
     fontSize: 12,
+    textShadowOffset: {
+      width: 2,
+      height: 1,
+    },
+  },
+  selected: {
+    color: "#fff",
     fontWeight: 500,
   },
 });
