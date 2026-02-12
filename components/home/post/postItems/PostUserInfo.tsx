@@ -1,4 +1,4 @@
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import React from "react";
@@ -10,7 +10,7 @@ type PostUserInfoProps = {
 };
 
 const PostUserInfo = ({ name, imageUrl }: PostUserInfoProps) => {
-  const colors = Colors();
+  const colors = useColors();
   return (
     <View style={styles.view}>
       <View style={styles.userInfo}>

@@ -1,10 +1,10 @@
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import { AntDesign } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 const CreateStory = () => {
-  const colors = Colors();
+  const colors = useColors();
   return (
     <View style={styles.view}>
       <View style={[styles.createStoryView, { borderColor: colors.primary }]}>

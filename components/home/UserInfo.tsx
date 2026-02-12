@@ -1,21 +1,21 @@
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import { Image } from "expo-image";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 const UserInfo = () => {
-  const colors = Colors();
+  const colors = useColors();
   return (
     <View style={styles.view}>
       <View style={styles.profileImgView}>
         <Image
-          source={"https://1.vikiplatform.com/pr/24024pr/2029e95675.jpg?x=b"}
+          source={"https://www.famousbirthdays.com/headshots/-nash-dc-4.jpg"}
           contentFit="cover"
           style={styles.profileImg}
         />
       </View>
       <View style={styles.userInfo}>
-        <Text style={{ color: colors.text }}>Jingyi</Text>
+        <Text style={{ color: colors.text }}>Jian Wei</Text>
         <Text style={{ color: colors.text, fontWeight: 700 }}>
           Woodlands, Singapore
         </Text>

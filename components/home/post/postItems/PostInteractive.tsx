@@ -1,4 +1,4 @@
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import { EvilIcons, FontAwesome } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -14,7 +14,7 @@ const PostInteractive = ({
   likeCount,
   commentCount,
 }: PostInteractiveProps) => {
-  const colors = Colors();
+  const colors = useColors();
   return (
     <View style={styles.view}>
       <TouchableOpacity style={styles.btn}>

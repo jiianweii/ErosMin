@@ -6,28 +6,28 @@ import Story from "./Story";
 const TEST_DATA = [
   {
     imageUrl:
-      "https://i.pinimg.com/474x/c3/b0/62/c3b062198d95026d4e8c211f9e6d8922.jpg",
-    name: "@Axellynnax",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCMP3I-xe_rhuJpKxNfdLnl7Ut2mdAD7ft-A&s",
+    name: "Morgan",
   },
   {
     imageUrl:
-      "https://i.pinimg.com/originals/60/59/db/6059db2d934d5925625fe1d7acb9dc5e.jpg",
-    name: "@Cameron2xy",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8wJnXd4KycPBRnToZ13FGGHMQOqMkIxMOug&s",
+    name: "Jing Yi",
   },
   {
     imageUrl:
-      "https://i.pinimg.com/736x/10/f4/e5/10f4e5b38748d3a8edcf781156643c8e.jpg",
-    name: "@Kylevasilyn",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnTWnCxRVcMHrHWzTdOnkHnRXkIxcovsuh4A&s",
+    name: "Jia Hui",
   },
   {
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQolnbeMqs63y5hIjmDWFVGBY0-Xoa1YZXTFg&s",
-    name: "@Royce2max",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5JGKtgyLR1bSVFatDp4PITOB9XkTaevzhjg&s",
+    name: "Ting Ting",
   },
   {
     imageUrl:
-      "https://i.pinimg.com/236x/43/d5/f4/43d5f48a4f6a5e1d9d738a257c06f979.jpg",
-    name: "@Ralphmatt",
+      "https://cdn2.stylecraze.com/wp-content/uploads/2013/06/Sham-Yen-Yi.jpg.webp",
+    name: "Joanne",
   },
 ];
 

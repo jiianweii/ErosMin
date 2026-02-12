@@ -1,4 +1,4 @@
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
@@ -7,7 +7,7 @@ type CategoryProps = {
 };
 
 const Category = ({ name }: CategoryProps) => {
-  const colors = Colors();
+  const colors = useColors();
   return (
     <TouchableOpacity style={[styles.btn, { borderColor: colors.primary }]}>
       <Text style={{ color: colors.text }}>{name}</Text>

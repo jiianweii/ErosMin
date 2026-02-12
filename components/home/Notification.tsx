@@ -1,5 +1,6 @@
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -8,9 +9,9 @@ type NotificationProps = {
 };
 
 const Notification = ({ notifCount = 0 }: NotificationProps) => {
-  const colors = Colors();
+  const colors = useColors();
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => router.push("notification")}>
       {notifCount > 0 && (
         <View style={[styles.notifCount, { backgroundColor: colors.primary }]}>
           <Text style={{ color: colors.text, fontSize: 12 }}>{notifCount}</Text>
