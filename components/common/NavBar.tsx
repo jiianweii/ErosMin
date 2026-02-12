@@ -1,14 +1,14 @@
 import { useNavbarContext } from "@/providers/NavbarProvider";
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const NavBar: React.FC<BottomTabBarProps> = ({
   state,
   descriptors,
   navigation,
 }) => {
-  const colors = Colors();
+  const colors = useColors();
   const { isNavbarShown, setIsNavbarShown } = useNavbarContext();
 
   if (!isNavbarShown) return null;
@@ -58,6 +58,15 @@ const NavBar: React.FC<BottomTabBarProps> = ({
             style={styles.pressable}
           >
             {icon}
+            <Text
+              style={{
+                color: isFocused ? colors.primary : colors.text,
+                fontSize: 12,
+                fontWeight: 500,
+              }}
+            >
+              {options.title}
+            </Text>
           </TouchableOpacity>
         );
       })}
@@ -69,16 +78,21 @@ const styles = StyleSheet.create({
   view: {
     position: "absolute",
     flexDirection: "row",
-    bottom: 30,
-    alignSelf: "center",
-    borderRadius: 30,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    justifyContent: "space-between",
     paddingHorizontal: 5,
-    paddingVertical: 7,
+    paddingVertical: 10,
     gap: 1,
+    width: "100%",
+    height: 90,
   },
   pressable: {
     paddingHorizontal: 14,
     paddingVertical: 6,
+    alignItems: "center",
+    gap: 4,
   },
 });
 

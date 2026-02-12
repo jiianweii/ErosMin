@@ -1,4 +1,4 @@
-import Colors from "@/util/colors";
+import useColors from "@/util/colors";
 import { View } from "react-native";
 
 type DividerProps = {
@@ -12,7 +12,7 @@ const Divider = ({
   thickness = 1,
   marginVertical = 12,
 }: DividerProps) => {
-  const colors = Colors();
+  const colors = useColors();
 
   const bgColor = color || colors.text + "15";
 
