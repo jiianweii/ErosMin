@@ -1,7 +1,7 @@
-import Colors from "@/util/colors";
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import ThemeText from "../common/ThemeText";
+import useColors from "@/util/colors";
 
 type ToggleableProps = {
   title: string;
@@ -9,7 +9,7 @@ type ToggleableProps = {
 };
 
 const Toggleable = ({ title, isSelected = false }: ToggleableProps) => {
-  const colors = Colors();
+  const colors = useColors();
 
   const selectedStyle = isSelected && {
     backgroundColor: colors.tabIconSelected,

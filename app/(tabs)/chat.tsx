@@ -26,5 +26,6 @@ export default Chat;
 const styles = StyleSheet.create({
   view: {
     flex: 1,
+    marginBottom: 56,
   },
 });

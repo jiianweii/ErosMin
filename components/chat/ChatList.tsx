@@ -6,29 +6,30 @@ import ChatConversation from "./ChatConversation";
 
 const SAMPLE_DATA = [
   {
-    name: "Nash",
-    source: "https://www.famousbirthdays.com/headshots/-nash-dc-4.jpg",
+    name: "Morgan",
+    source:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCMP3I-xe_rhuJpKxNfdLnl7Ut2mdAD7ft-A&s",
     date: "03:54",
     message: "Yo, fine shyt",
   },
   {
-    name: "Alex",
+    name: "Jing Yi",
     source:
-      "https://recordstore.co.uk/cdn/shop/files/channels4_profile.jpg?v=1755080910&width=900",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8wJnXd4KycPBRnToZ13FGGHMQOqMkIxMOug&s",
     date: "02:41",
     message: "You still up?",
   },
   {
-    name: "Jade",
+    name: "Jia Hui",
     source:
-      "https://m.media-amazon.com/images/M/MV5BYzJjMmQ4YTctYWM2Zi00YzVmLWFmZmItMDA0ZmVhOGNhMjA3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnTWnCxRVcMHrHWzTdOnkHnRXkIxcovsuh4A&s",
     date: "01:18",
     message: "That pic you posted 😮‍🔥",
   },
   {
-    name: "Marcus",
+    name: "Ting Ting",
     source:
-      "https://lkcnhm.nus.edu.sg/wp-content/uploads/sites/11/2024/02/2025-Marcus-Chua.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5JGKtgyLR1bSVFatDp4PITOB9XkTaevzhjg&s",
     date: "23:09",
     message: "I’m outside",
   },
@@ -40,9 +41,9 @@ const SAMPLE_DATA = [
     message: "Goodnight 💕",
   },
   {
-    name: "Chris",
+    name: "Joanne",
     source:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHVSu_iyZ8XW87QPYQy_RrgzNNEilfeege1w&s",
+      "https://cdn2.stylecraze.com/wp-content/uploads/2013/06/Sham-Yen-Yi.jpg.webp",
     date: "Yesterday",
     message: "Did you get home safe?",
   },

@@ -1,18 +1,18 @@
-import Colors from "@/util/colors";
 import { Entypo, Feather } from "@expo/vector-icons";
 import { router } from "expo-router";
 import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "../themed-text";
+import ThemeText from "../common/ThemeText";
+import useColors from "@/util/colors";
 
 const Helper = () => {
-  const colors = Colors();
+  const colors = useColors();
   return (
     <View style={styles.view}>
       <TouchableOpacity onPress={() => router.push("/(tabs)")}>
         <Entypo name="chevron-left" size={24} color={colors.text} />
       </TouchableOpacity>
-      <ThemedText style={styles.title}>Chat Messages</ThemedText>
+      <ThemeText style={styles.title}>Chat Messages</ThemeText>
       <TouchableOpacity>
         <Feather name="search" size={24} color={colors.text} />
       </TouchableOpacity>
