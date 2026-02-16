@@ -1,12 +1,12 @@
 import useColors from "@/util/colors";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 
 const ThemeView = ({
   style,
   children,
 }: {
-  style?: object;
+  style?: StyleProp<ViewStyle>;
   children: React.ReactNode;
 }) => {
   const colors = useColors();

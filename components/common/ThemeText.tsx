@@ -1,12 +1,13 @@
 import useColors from "@/util/colors";
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleProp, StyleSheet, Text, TextStyle } from "react-native";
 
 const ThemeText = ({
   style,
   children,
 }: {
-  style?: object;
+  style?: StyleProp<TextStyle>;
+
   children: React.ReactNode;
 }) => {
   const colors = useColors();
