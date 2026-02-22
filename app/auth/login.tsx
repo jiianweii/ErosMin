@@ -23,13 +23,17 @@ const Login = () => {
       >
         <ThemeText style={{ fontSize: 25, fontWeight: 600 }}>EROSMIN</ThemeText>
         <View style={styles.inputView}>
-          <Input value={email} setValue={setEmail} placeholder="Email" />
+          <Input
+            value={email}
+            setValue={setEmail}
+            placeholder="Phone, Email or Username"
+          />
           <PasswordInput
             value={password}
             setValue={setPassword}
             placeholder="Password"
           />
-          <Button>
+          <Button onPress={() => router.replace("/(tabs)")}>
             <ThemeText>Sign In</ThemeText>
           </Button>
         </View>
