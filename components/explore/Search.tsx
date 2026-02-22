@@ -13,7 +13,10 @@ const Search = () => {
         color={colors.text}
         style={styles.searchIcon}
       />
-      <TextInput placeholder="Search" style={styles.input} />
+      <TextInput
+        placeholder="Search"
+        style={[styles.input, { color: colors.text }]}
+      />
     </View>
   );
 };

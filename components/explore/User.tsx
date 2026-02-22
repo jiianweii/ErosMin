@@ -13,7 +13,12 @@ const User = ({ source, name, id }: UserProps) => {
   const { width } = Dimensions.get("screen");
   return (
     <View style={[styles.view, { width: (width - 26) / 2 }]}>
-      <Image source={source} contentFit="cover" style={styles.image} />
+      <Image
+        source={source}
+        contentFit="cover"
+        style={styles.image}
+        blurRadius={20}
+      />
       <View style={styles.info}>
         <ThemeText style={[styles.name, { fontWeight: 500 }]}>{name}</ThemeText>
         <ThemeText style={[styles.name, { fontSize: 12 }]}>
