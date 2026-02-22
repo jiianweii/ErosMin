@@ -42,7 +42,7 @@ const Archive = ({ type }: ArchiveProps) => {
         }}
       >
         <ThemeText style={styles.viewTitle}>Archive</ThemeText>
-        <Pressable onPress={() => router.push("/archive/archive")}>
+        <Pressable onPress={() => router.push("/profile/archive")}>
           <ThemeText>See All</ThemeText>
         </Pressable>
       </View>

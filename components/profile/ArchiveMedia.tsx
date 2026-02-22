@@ -15,6 +15,7 @@ const ArchiveMedia = ({ source }: ArchiveMediaProps) => {
         width: (width - 50) / 2,
         height: 200,
       }}
+      blurRadius={20}
     />
   );
 };

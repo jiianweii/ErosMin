@@ -21,8 +21,8 @@ const Followers = () => {
   return (
     <View style={styles.view}>
       <Button type="Matches" value={203} />
-      <Button type="Likes" value={182} />
-      <Button type="Profile Views" value={851} />
+      <Button type="Likes" value={894} />
+      <Button type="Profile Views" value={1851} />
     </View>
   );
 };
