@@ -1,5 +1,6 @@
-import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { SelectedChatProps } from "@/app/(tabs)/chat";
+import React, { Dispatch, SetStateAction } from "react";
+import { FlatList, Pressable, StyleSheet, View } from "react-native";
 import ThemeText from "../common/ThemeText";
 import OnlineProfile from "./OnlineProfile";
 
@@ -21,13 +22,21 @@ const SAMPLE_DATA = [
   },
 ];
 
-const OnlineList = () => {
+interface OnlineListProps {
+  setSelectedChat: Dispatch<SetStateAction<SelectedChatProps | null>>;
+}
+
+const OnlineList = ({ setSelectedChat }: OnlineListProps) => {
   return (
     <View style={styles.view}>
       <ThemeText style={styles.title}>Online ({SAMPLE_DATA.length})</ThemeText>
       <FlatList
         data={SAMPLE_DATA}
-        renderItem={({ item }) => <OnlineProfile {...item} />}
+        renderItem={({ item }) => (
+          <Pressable onPress={() => setSelectedChat(item)}>
+            <OnlineProfile {...item} />
+          </Pressable>
+        )}
         keyExtractor={(item) => item.name}
         ItemSeparatorComponent={() => <View style={{ width: 16 }}></View>}
         horizontal

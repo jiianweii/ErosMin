@@ -1,5 +1,6 @@
-import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { SelectedChatProps } from "@/app/(tabs)/chat";
+import React, { Dispatch, SetStateAction } from "react";
+import { FlatList, Pressable, StyleSheet, View } from "react-native";
 import Divider from "../common/Divider";
 import ThemeText from "../common/ThemeText";
 import ChatConversation from "./ChatConversation";
@@ -56,7 +57,11 @@ const SAMPLE_DATA = [
   },
 ];
 
-const ChatList = () => {
+interface ChatListProps {
+  setSelectedChat: Dispatch<SetStateAction<SelectedChatProps | null>>;
+}
+
+const ChatList = ({ setSelectedChat }: ChatListProps) => {
   return (
     <View style={styles.view}>
       <View style={styles.titleView}>
@@ -68,7 +73,15 @@ const ChatList = () => {
       <FlatList
         data={SAMPLE_DATA}
         keyExtractor={(item) => item.name}
-        renderItem={({ item }) => <ChatConversation {...item} />}
+        renderItem={({ item }) => (
+          <Pressable
+            onPress={() =>
+              setSelectedChat({ imageSrc: item.source, name: item.name })
+            }
+          >
+            <ChatConversation {...item} />
+          </Pressable>
+        )}
         ItemSeparatorComponent={() => (
           <Divider thickness={0} marginVertical={8} />
         )}

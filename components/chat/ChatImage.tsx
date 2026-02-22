@@ -1,15 +1,21 @@
 import { Image } from "expo-image";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 
 type ChatImageProps = {
+  style?: StyleProp<ViewStyle>;
   source: string;
 };
 
-const ChatImage = ({ source }: ChatImageProps) => {
+const ChatImage = ({ style, source }: ChatImageProps) => {
   return (
-    <View style={styles.view}>
-      <Image source={source} contentFit="cover" style={styles.image} />
+    <View style={[styles.view, style]}>
+      <Image
+        source={source}
+        contentFit="cover"
+        style={styles.image}
+        blurRadius={20}
+      />
     </View>
   );
 };
