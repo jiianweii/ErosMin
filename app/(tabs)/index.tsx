@@ -14,12 +14,12 @@ export default function HomeScreen() {
         <UserInfo />
         <Notification notifCount={3} />
       </View>
-      <Divider thickness={0} />
+      <Divider thickness={0} marginVertical={6} />
       {/* Stories (People you liked and liked you back) */}
       <View style={styles.storiesView}>
         <StoryList />
       </View>
-      <Divider thickness={0} />
+      <Divider thickness={0} marginVertical={6} />
       {/* Posts */}
       <View style={styles.postView}>
         {/* <PostCategories /> */}
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   storiesView: {
-    flex: 1.2,
+    flex: 1.5,
     paddingHorizontal: 10,
   },
   postView: {
