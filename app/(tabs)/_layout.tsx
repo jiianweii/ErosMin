@@ -2,8 +2,7 @@ import { Tabs } from "expo-router";
 import React from "react";
 
 import NavBar from "@/components/common/NavBar";
-import { HapticTab } from "@/components/haptic-tab";
-import { Colors } from "@/constants/theme";
+import { Colors as Colours } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 
 import Chat from "@/assets/icons/Chat.svg";
@@ -18,9 +17,11 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveTintColor: Colours[colorScheme ?? "light"].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
+        tabBarStyle: {
+          display: "none",
+        },
       }}
       tabBar={(props) => <NavBar {...props} />}
     >
@@ -29,17 +30,17 @@ export default function TabLayout() {
         options={{
           title: "Minute",
           tabBarIcon: ({ color }) => (
-            <Minute width={28} height={28} fill={color} />
+            <Minute width={26} height={26} fill={color} />
           ),
         }}
       />
 
       <Tabs.Screen
-        name="partner"
+        name="explore"
         options={{
-          title: "Partner",
+          title: "Explore",
           tabBarIcon: ({ color }) => (
-            <Partner width={28} height={28} fill={color} />
+            <Partner width={26} height={26} fill={color} />
           ),
         }}
       />
@@ -49,7 +50,7 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => (
-            <Home width={28} height={28} fill={color} />
+            <Home width={26} height={26} fill={color} />
           ),
         }}
       />
@@ -59,7 +60,7 @@ export default function TabLayout() {
         options={{
           title: "Chat",
           tabBarIcon: ({ color }) => (
-            <Chat width={28} height={28} fill={color} />
+            <Chat width={26} height={26} fill={color} />
           ),
         }}
       />
@@ -68,7 +69,7 @@ export default function TabLayout() {
         options={{
           title: "Profile",
           tabBarIcon: ({ color }) => (
-            <Profile width={28} height={28} fill={color} />
+            <Profile width={26} height={26} fill={color} />
           ),
         }}
       />
